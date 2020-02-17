@@ -1,0 +1,36 @@
+
+      <sh-grid class="bg">
+        <sh-card columns="4" style="opacity: 0;"></sh-card>
+        <!-- Login Page -->
+        <sh-card *ngIf="isVisibleLogin" columns="4" style="width: 600px;height: max-content;align-self: center;"   >
+            <sh-image-segment columns="6" style="width: 30%;align-self: left;">
+                <img  src=".\assets\img\siemens_healthineers_logo.png" />
+            </sh-image-segment>
+            <sh-button  label='Login With SSO' shape='pill-l' style="align-self: center;margin-top: 25px;margin-bottom: 25px;"></sh-button>
+            <sh-text size='header-2' style="text-align: center;margin-bottom: 25px;">OR</sh-text>
+            <sh-input-text  label='Username / E-mail'></sh-input-text><br>
+            <sh-input-text label='Password' type="password"></sh-input-text>
+            <sh-text  href="#" color="secondary">Forgot password?</sh-text>
+            <br>
+            <span style="display: inline-flex;">
+                <sh-text style="font-size: 20px;" slot="footer" href="#"  color="secondary" (click)="Register()">Register</sh-text>
+                <sh-button  slot="footer" label='Login' (click)="Login()"></sh-button>
+            </span>
+        </sh-card>
+
+        <!-- Register Page -->
+        <sh-card *ngIf="isVisibleRegister" columns="4" style="width: 600px;height: max-content;align-self: center;"   >
+            <sh-image-segment columns="6" style="width: 30%;align-self: left;">
+                <img  src=".\assets\img\siemens_healthineers_logo.png" />
+            </sh-image-segment>
+            <sh-text size='header-2' style="text-align: center;margin-bottom: 25px;">Register Here</sh-text>
+                <sh-input-text id="regUserName" label='Username / E-mail' ></sh-input-text><br>
+                <sh-input-text id="regUserPassword" label='Password' type="password"></sh-input-text><br>
+                <sh-input-text id="regUserConfirmPassword" label='Confirm Password' type="password"></sh-input-text>
+                <span style="display: inline-flex;align-self:flex-end;margin-top: 25px;">
+                    <sh-button slot="footer" label='Submit' style="margin-right: 10px;" ></sh-button>
+                    <sh-button slot="footer" label='Cancel' style="margin-right: 10px;" (click)="Cancel()" ></sh-button>
+                </span>
+        </sh-card>
+        <sh-card columns="4" style="opacity: 0;"> </sh-card>
+</sh-grid>

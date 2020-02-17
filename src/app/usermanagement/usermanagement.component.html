@@ -1,0 +1,50 @@
+<sh-page>
+    <sh-access-bar slot="access" label="User Management">
+        <sh-user-identifier slot="user" name="Siemens User" info="Siemens Healthineers"></sh-user-identifier>
+      </sh-access-bar>
+<sh-grid>
+    <sh-card columns="9" col-s="12">
+        <sh-table>
+            <sh-table-row slot="header">
+                <sh-table-head columns="6">User ID</sh-table-head>
+                <sh-table-head columns="6">User Name</sh-table-head>
+                <sh-table-head columns="6">Role</sh-table-head>
+                <sh-table-head columns="6">Approved</sh-table-head>
+            </sh-table-row>
+            <sh-table-row *ngFor="let data of tableData">
+                <sh-table-cell columns="6">{{data.UserID}}</sh-table-cell>
+                <sh-table-cell columns="6">{{data.UserName}}</sh-table-cell>
+                <sh-table-cell columns="6">{{data.Role}}</sh-table-cell>
+                <sh-table-cell icon columns="6" >
+                    <sh-checkbox label='' active ></sh-checkbox>
+                </sh-table-cell>
+            </sh-table-row>
+        </sh-table>
+    </sh-card>
+    <sh-card columns="3" col-s="12">
+        <sh-card>
+        <span style="display: inline-flex;">
+            <sh-text size='Title 2' color="primary">User ID</sh-text>
+            <sh-text size='body-1' color="primary">1</sh-text>
+        </span>
+        <br>
+        <span style="display: inline-flex;">
+            <sh-text size='body-1' color="primary">User Name</sh-text>
+            <sh-text size='body-1' color="primary">User Name</sh-text>
+        </span>
+        <br>
+        <span style="display: inline-flex;">
+            <sh-text size='body-1' color="primary">Role</sh-text>
+            <sh-dropdown label='Roles'>
+                <sh-menu-item label='Admin'></sh-menu-item>
+                <sh-menu-item label='User' active></sh-menu-item>
+            </sh-dropdown>
+        </span>
+        <span  style="display: inline-flex;align-self:flex-end;margin-top: 25px;">
+            <sh-button label='Update' ></sh-button>
+        </span>
+        
+    </sh-card>
+    </sh-card>
+    </sh-grid>
+</sh-page>
